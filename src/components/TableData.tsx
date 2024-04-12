@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CityDetails from "./CityDetails";
+import SearchCity from "./SearchCity";
 
 const TableData = () => {
   const [city, setCities] = useState();
@@ -21,6 +22,7 @@ const TableData = () => {
   }, []);
   return (
     <div>
+      {/* <SearchCity /> */}
       <CityDetails cityData={city} />
     </div>
   );
