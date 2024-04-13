@@ -60,6 +60,7 @@ const CityDetails = ({ cityData }) => {
         `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=20&refine=cou_name_en%3A${countryName}`
       );
       console.log(response.data.results);
+      console.log(response.data.results);
       setSearchCity(response.data.results);
     } catch (error) {
       console.error("Error fetching data:", error);
