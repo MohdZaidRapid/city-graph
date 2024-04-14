@@ -14,7 +14,7 @@ const SearchCity = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=20&refine=cou_name_en%3A${countryName}`
+        `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=100&refine=cou_name_en%3A${countryName}`
       );
       setSearchResults(response.data.results);
     } catch (error) {

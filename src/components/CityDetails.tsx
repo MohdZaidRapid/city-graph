@@ -59,7 +59,7 @@ const CityDetails = ({ cityData }) => {
       const response = await axios.get(
         `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=20&refine=cou_name_en%3A${countryName}`
       );
-      console.log(response.data.results);
+      
       console.log(response.data.results);
       setSearchCity(response.data.results);
     } catch (error) {
@@ -90,7 +90,7 @@ const CityDetails = ({ cityData }) => {
         </h2>
         <input
           type="text"
-          placeholder="Search city"
+          placeholder="Search city(first name should be letter)"
           value={countryName}
           onChange={(e) => handleSearchCity(e)}
           className=" w-full"
