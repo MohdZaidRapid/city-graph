@@ -42,7 +42,7 @@ const SearchCity = () => {
       <h2>City Search</h2>
       <input
         type="text"
-        placeholder="Search cities..."
+        placeholder="Search city first Letter should be capital"
         value={searchTerm}
         onChange={handleSearchChange}
       />
