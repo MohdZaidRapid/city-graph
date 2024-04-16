@@ -35,37 +35,37 @@ const CityDetails = ({ cityData }) => {
       })
     : cityData;
 
-  useEffect(() => {
-    let debounceTimer;
-    // Clear the previous timer
-    clearTimeout(debounceTimer);
-    // Set a new timer
-    debounceTimer = setTimeout(() => {
-      fetchData();
-    }, 3000); // Adjust the debounce delay here (3000ms in this example)
+  // useEffect(() => {
+  //   let debounceTimer;
+  //   // Clear the previous timer
+  //   clearTimeout(debounceTimer);
+  //   // Set a new timer
+  //   debounceTimer = setTimeout(() => {
+  //     fetchData();
+  //   }, 3000); // Adjust the debounce delay here (3000ms in this example)
 
-    // Cleanup function to clear timer on component unmount
-    return () => clearTimeout(debounceTimer);
-  }, [countryName]);
+  //   // Cleanup function to clear timer on component unmount
+  //   return () => clearTimeout(debounceTimer);
+  // }, [countryName]);
 
-  const handleSearchCity = (e: any) => {
-    const value = e.target.value;
-    console.log(value);
-    setCountryName(value);
-  };
+  // const handleSearchCity = (e: any) => {
+  //   const value = e.target.value;
+  //   console.log(value);
+  //   setCountryName(value);
+  // };
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=20&refine=cou_name_en%3A${countryName}`
-      );
-      
-      console.log(response.data.results);
-      setSearchCity(response.data.results);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=20&refine=cou_name_en%3A${countryName}`
+  //     );
+
+  //     console.log(response.data.results);
+  //     setSearchCity(response.data.results);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
 
   // Debounce function to delay search execution
   // let debounceTimer: any;
